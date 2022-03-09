@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JAR/JAR.iml" filepath="$PROJECT_DIR$/JAR/JAR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UUR.iml" filepath="$PROJECT_DIR$/UUR.iml" />
+    </modules>
+  </component>
+</project>
