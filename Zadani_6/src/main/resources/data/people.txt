@@ -1,0 +1,20 @@
+Johnny/Depp/09.06.1963/depp@hollywood.com/12345
+Russel/Crowe/07.04.1964/crowe@hollywood.com/100 02
+Brad/Pitt/18.12.1963/pitt@hollywood.com/100 03
+Angelina/Jolie/04.06.1975/jolie@hollywood.com/100 04
+Leonardo/DiCaprio/11.09.1974/dicaprio@hollywood.com/100 05
+Tom/Cruise/03.06.1962/cruise@hollywood.com/100 06
+Arnold/Schwarznegger/30.06.1947/schwartznegger@hollywood.com/100 07
+Sylvestr/Stallone/06.06.1946/stallone@hollywood.com/100 08
+Morgan/Freeman/01.05.1937/freeman@hollywood.com/100 09
+Keanu/Reeves/02.09.1964/reeves@hollywood.com/100 10
+Nicolas/Cage/07.01.1964/cage@hollywood.com/100 11
+Hugh/Jackman/12.10.1968/jackman@hollywood.com/100 12
+Bruce/Willis/12.05.1955/willis@hollywood.com/100 13
+Will/Smith/23.09.1968/smith@hollywood.com/100 14
+Vin/Diesel/18.06.1967/diesel@hollywood.com/100 15
+Matt/Damon/08.10.1970/damon@hollywood.com/100 16
+Scarlett/Johansson/22.11.1984/johansson@hollywood.com/100 17
+Tom/Hardy/15.09.1977/hardy@hollywood.com/100 18
+Robert/DowneyJr/04.04.1965/downeyjr@hollywood.com/100 19
+Emma/Watson/15.04.1990/watson@hollywood.com/100 20

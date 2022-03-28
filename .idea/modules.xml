@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JAR/JAR.iml" filepath="$PROJECT_DIR$/JAR/JAR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SandBoxesFX/SandBoxesFX.iml" filepath="$PROJECT_DIR$/SandBoxesFX/SandBoxesFX.iml" />
       <module fileurl="file://$PROJECT_DIR$/UUR.iml" filepath="$PROJECT_DIR$/UUR.iml" />
     </modules>
   </component>

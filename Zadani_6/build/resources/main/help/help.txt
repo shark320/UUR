@@ -1,0 +1,16 @@
+Data format:
+
+- name and surname started only with big letter
+- data must be only in format dd.mm.yyyy
+- email address is formatted in standard RFC 5322
+- post index must be in format 000 00 or 00000
+
+Buttons:
+
+- "Save"    - save all changes in the editable list view
+- "Delete"  - delete selected person data
+- "Create new"  - makes possible to add new element to the list
+- "Create"  - add the element to the list
+- "Cancel"  - return to the editing area
+- "Show person info"    - show window with selected person info
+- "Show list info"  - show window with all people info
