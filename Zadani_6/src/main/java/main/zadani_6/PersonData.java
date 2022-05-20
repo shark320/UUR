@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -181,7 +182,11 @@ public class PersonData {
      */
     public void setBirth(String birth) {
         birth = birth.strip();
-        this.birth = LocalDate.parse(birth, DATE_FORMAT);
+        try {
+            this.birth = LocalDate.parse(birth, DATE_FORMAT);
+        }catch (DateTimeParseException e){
+            throw new IllegalArgumentException ("Invalid date format");
+        }
     }
 
     /**

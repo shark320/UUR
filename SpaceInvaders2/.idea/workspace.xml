@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0928ffc5-37bc-4795-982f-37647c8203f9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../CV9/src/main/java/main/cv9/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpaceInvaders/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpaceInvaders/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpaceInvaders/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpaceInvaders/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpaceInvaders/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpaceInvaders/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpaceInvaders/src/main/java/main/spaceinvaders/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpaceInvaders/src/main/java/main/spaceinvaders/StartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpaceInvaders/src/main/java/main/spaceinvaders/datamodel/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpaceInvaders/src/main/java/main/spaceinvaders/datamodel/PlayersList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpaceInvaders/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpaceInvaders/src/main/resources/main.fxml/Start_menu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpaceInvaders/src/main/resources/players_data/data" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/ChangeUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/LeadersCellFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/LeadersController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/SpaceInvaders2App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/StartMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/datamodel/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/datamodel/PlayersList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/Add_user.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/Leaders.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/LogIn.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/Start_menu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/scrollbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Zadani_7/src/main/java/main/zadani_7/AddingWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Zadani_7/src/main/java/main/zadani_7/ColorCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Zadani_7/src/main/java/main/zadani_7/TextFontModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CV7/src/main/java/main/cv7/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CV7/src/main/java/main/cv7/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_6/.gradle/7.3.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Zadani_6/.gradle/7.3.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_6/.gradle/7.3.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Zadani_6/.gradle/7.3.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_6/.gradle/7.3.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Zadani_6/.gradle/7.3.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_6/.gradle/7.3.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Zadani_6/.gradle/7.3.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_6/.gradle/7.3.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Zadani_6/.gradle/7.3.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_6/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Zadani_6/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_6/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../Zadani_6/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_6/build/classes/java/main/main/zadani_6/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Zadani_6/build/classes/java/main/main/zadani_6/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_6/build/classes/java/main/main/zadani_6/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Zadani_6/build/classes/java/main/main/zadani_6/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_6/build/classes/java/main/main/zadani_6/PersonData.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Zadani_6/build/classes/java/main/main/zadani_6/PersonData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_6/build/libs/Zadani_6.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Zadani_6/build/libs/Zadani_6.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_6/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Zadani_6/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_6/src/main/java/main/zadani_6/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Zadani_6/src/main/java/main/zadani_6/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_6/src/main/java/main/zadani_6/PersonData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Zadani_6/src/main/java/main/zadani_6/PersonData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_7/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Zadani_7/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_7/src/main/java/main/zadani_7/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zadani_7/src/main/java/main/zadani_7/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Zadani_7/src/main/java/main/zadani_7/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SpaceInvaders2" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SpaceInvaders2" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SpaceInvaders2" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2971e9XV5RXcbQIyRK7Wf5GV5KD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vladi/OneDrive/Desktop/FAV/UUR/SpaceInvaders2/src/main/resources/main.spaceinvaders2.csssource&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vladi\OneDrive\Desktop\FAV\UUR\SpaceInvaders2\src\main\resources\main.spaceinvaders2.csssource" />
+      <recent name="C:\Users\vladi\OneDrive\Desktop\FAV\UUR\SpaceInvaders2\src\main\resources\main.source_css" />
+      <recent name="C:\Users\vladi\OneDrive\Desktop\FAV\UUR\SpaceInvaders2\src\main\resources" />
+      <recent name="C:\Users\vladi\OneDrive\Desktop\FAV\UUR\SpaceInvaders2\src\main\resources\main\spaceinvaders2" />
+      <recent name="C:\Users\vladi\OneDrive\Desktop\FAV\UUR\SpaceInvaders2\src\main\java\main\spaceinvaders2\datamodel" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vladi\OneDrive\Desktop\FAV\UUR\SpaceInvaders2\src\main\resources" />
+      <recent name="C:\Users\vladi\OneDrive\Desktop\FAV\UUR\SpaceInvaders2\src\main\resources\players_data" />
+      <recent name="C:\Users\vladi\OneDrive\Desktop\FAV\UUR\SpaceInvaders2\src\main\resources\main\spaceinvaders2" />
+      <recent name="C:\Users\vladi\OneDrive\Desktop\FAV\UUR\SpaceInvaders2\src\main\resources\main.spaceinvaders2.csssource" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="SpaceInvaders2 [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.SpaceInvaders2 [run]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0928ffc5-37bc-4795-982f-37647c8203f9" name="Changes" comment="" />
+      <created>1652449405495</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652449405495</updated>
+      <workItem from="1652449407015" duration="3397000" />
+      <workItem from="1652795351409" duration="2904000" />
+      <workItem from="1652802436246" duration="4651000" />
+      <workItem from="1652813644337" duration="598000" />
+      <workItem from="1652954902726" duration="128000" />
+      <workItem from="1653062178570" duration="827000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

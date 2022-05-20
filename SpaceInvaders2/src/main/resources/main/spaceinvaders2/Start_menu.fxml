@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="417.0" style="-fx-background-color: #3a0ca3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="main.spaceinvaders2.StartMenuController">
+   <center>
+      <VBox alignment="CENTER" prefHeight="673.0" prefWidth="364.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" text="Hello, Darth Vader!" textFill="#fca311">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+               <children>
+                  <Button fx:id="btnStart" defaultButton="true" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #f4a261;" text="START" textFill="LIME" onAction="#onStartClick">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" style="-fx-background-color: #f4a261;" text="Change User" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #f4a261;" text="Leaders" textAlignment="CENTER" onAction="#onLeadersClick">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+                  <Label text="Total score: 0" textFill="#fca311" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

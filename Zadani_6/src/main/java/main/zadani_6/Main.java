@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import javafx.util.converter.DefaultStringConverter;
 
+import java.time.format.DateTimeParseException;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -249,10 +250,12 @@ public class Main extends Application {
         cancelBtn.setPrefWidth(CONTROL_WIDTH);
 
         createBtn.setOnAction(e -> {
-            createData();
-            editableZone.getChildren().remove(buttonsNew);
-            editableZone.getChildren().add(buttonsEdit);
-            currentAction.setText("Not chosen");
+            peopleList.getSelectionModel().clearSelection();
+            if(createData()) {
+                editableZone.getChildren().remove(buttonsNew);
+                //editableZone.getChildren().add(buttonsEdit);
+                currentAction.setText("Not chosen");
+            }
         });
 
         cancelBtn.setOnAction(e -> {
@@ -260,6 +263,7 @@ public class Main extends Application {
             editableZone.getChildren().add(buttonsEdit);
             currentAction.setText("Not chosen");
             currentPerson.setItems(new SimpleListProperty<>());
+            peopleList.getSelectionModel().clearSelection();
             currentPerson.refresh();
         });
 
@@ -280,6 +284,7 @@ public class Main extends Application {
         //delete selected personal data
         Button deleteBtn = new Button("Delete");
         deleteBtn.setPrefWidth(CONTROL_WIDTH);
+        //deleteBtn.setStyle("-fx-background-color: #ff0000");
         //setting creating mode
         Button newBtn = new Button("Create new");
         newBtn.setPrefWidth(CONTROL_WIDTH);
@@ -294,6 +299,7 @@ public class Main extends Application {
         newBtn.setOnAction(e -> {
             currentAction.setText("Creating new personal data");
             currentPerson.setItems(new SimpleListProperty<String>(createEmptyList()));
+            currentPerson.setEditable(true);
             editableZone.getChildren().remove(buttonsEdit);
             editableZone.getChildren().add(buttonsNew);
         });
@@ -318,8 +324,10 @@ public class Main extends Application {
 
     /**
      * create new personal data using data from the editable list
+     *
+     * @return true if new data was created, false if not
      */
-    private void createData() {
+    private boolean createData() {
         try {
             Object[] data = currentPerson.getItems().toArray();
             PersonData current = new PersonData(
@@ -331,11 +339,14 @@ public class Main extends Application {
             );
             peopleData.add(current);
             peopleList.refresh();
+            peopleList.getSelectionModel().select(current);
         } catch (IllegalArgumentException exception) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText(exception.getMessage());
             alert.show();
+            return false;
         }
+        return true;
     }
 
     /**
@@ -375,7 +386,7 @@ public class Main extends Application {
                 peopleList.refresh();
             } catch (IllegalArgumentException exception) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText(exception.getMessage());
+                alert.setHeaderText(exception.getMessage());
                 alert.show();
             }
         }

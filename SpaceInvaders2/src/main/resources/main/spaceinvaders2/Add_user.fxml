@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="417.0" style="-fx-background-color: #3a0ca3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" maxHeight="50.0" maxWidth="200.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="User name" textFill="#fca311">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField alignment="CENTER" promptText="User name" style="-fx-text-fill: #fca311;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" maxHeight="50.0" maxWidth="200.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Password" textFill="#fca311">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField alignment="CENTER" promptText="Password" style="-fx-text-fill: #fca311;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" maxHeight="50.0" maxWidth="200.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Confirm password" textFill="#fca311">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField alignment="CENTER" promptText="Confirm password" style="-fx-text-fill: #fca311;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <Button maxWidth="200.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f4a261;" text="CREATE NEW USER">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <Hyperlink text="I already have an account" textFill="#fca311" underline="true" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="20.0" />
+         </padding>
+      </Hyperlink>
+   </bottom>
+</BorderPane>

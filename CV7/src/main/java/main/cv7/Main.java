@@ -157,10 +157,6 @@ public class Main extends Application {
 
         zooTable.getColumns().addAll(speciesColumn, weightColumn, soundColumn, legCountColumn);
         zooTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-        zooTable.getSelectionModel().getSelectedItems().addListener((ListChangeListener<? super Animal>) e->{
-
-            showPrintDialog();
-        });
         return zooTable;
     }
 
