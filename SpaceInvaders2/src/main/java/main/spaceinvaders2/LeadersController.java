@@ -35,6 +35,6 @@ public class LeadersController implements Initializable {
 
     @FXML
     protected void onCloseClick() throws IOException, URISyntaxException {
-        SpaceInvaders2App.primaryStage.setScene(SpaceInvaders2App.startMenu);
+        SpaceInvaders2App.showStartMenu();
     }
 }

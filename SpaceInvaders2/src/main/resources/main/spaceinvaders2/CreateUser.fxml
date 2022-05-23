@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="417.0" style="-fx-background-color: #3a0ca3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.control.PasswordField?>
+<BorderPane fx:controller="main.spaceinvaders2.CreateUserController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="417.0" style="-fx-background-color: #3a0ca3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
@@ -20,7 +21,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField alignment="CENTER" promptText="User name" style="-fx-text-fill: #fca311;">
+                  <TextField fx:id="userNameField" alignment="CENTER" promptText="Username" style="-fx-text-fill: #fca311;">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -34,11 +35,11 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField alignment="CENTER" promptText="Password" style="-fx-text-fill: #fca311;">
+                  <PasswordField fx:id="passwordField" alignment="CENTER" promptText="Password" style="-fx-text-fill: #fca311;">
                      <font>
                         <Font size="13.0" />
                      </font>
-                  </TextField>
+                  </PasswordField>
                </children>
             </VBox>
             <VBox alignment="CENTER" maxHeight="50.0" maxWidth="200.0" prefHeight="200.0" prefWidth="100.0">
@@ -48,14 +49,14 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField alignment="CENTER" promptText="Confirm password" style="-fx-text-fill: #fca311;">
+                  <PasswordField fx:id="confirmPasswordField" alignment="CENTER" promptText="Confirm password" style="-fx-text-fill: #fca311;">
                      <font>
                         <Font size="13.0" />
                      </font>
-                  </TextField>
+                  </PasswordField>
                </children>
             </VBox>
-            <Button maxWidth="200.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f4a261;" text="CREATE NEW USER">
+            <Button maxWidth="200.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f4a261;" text="CREATE NEW USER" onAction="#onCreateNewUserClick">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
@@ -64,7 +65,7 @@
       </VBox>
    </center>
    <bottom>
-      <Hyperlink text="I already have an account" textFill="#fca311" underline="true" BorderPane.alignment="CENTER">
+      <Hyperlink text="I already have an account" textFill="#fca311" underline="true" BorderPane.alignment="CENTER" onAction="#onAlreadyHaveClick">
          <font>
             <Font size="14.0" />
          </font>

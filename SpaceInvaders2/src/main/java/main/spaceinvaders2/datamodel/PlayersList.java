@@ -13,13 +13,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class PlayersList {
 
     private URL fileURL;
 
-    //List<Player> players = new ArrayList<>();
+    private static final Player defaultPlayer = new Player("Default player", 0, 0);
 
     private ListProperty<Player> players = new SimpleListProperty<>(FXCollections.observableArrayList());
 
@@ -33,6 +34,14 @@ public class PlayersList {
         return players;
     }
 
+    public PlayersList(){
+        players.add(defaultPlayer);
+    }
+
+    public Player getDefaultPlayer(){
+        return defaultPlayer;
+    }
+
     public void readFromFile () throws IOException {
         try {
             fileURL = getClass().getClassLoader().getResource("data.txt");
@@ -40,6 +49,7 @@ public class PlayersList {
             Scanner sc = new Scanner(playerFile);
             while (sc.hasNextLine()) {
                 String[] data = sc.nextLine().split("/");
+                System.out.println(Arrays.toString(data));
                 if (data.length != 3) throw new IllegalArgumentException("Invalid data.txt string format");
                 String nick = data[0];
                 int scores = Integer.parseInt(data[1]);
@@ -63,6 +73,15 @@ public class PlayersList {
         players.add(new Player(nick, 0,pass));
         PrintWriter writer = new PrintWriter(new FileWriter(new File(fileURL.toURI()),true));
         writer.append(nick).append("/0/").append(String.valueOf(pass)).append("\n");
+        writer.close();
+        players.sort(null);
+    }
+
+    public void addNewPlayer (Player player) throws IOException, URISyntaxException {
+        players.add(new Player(player.getNickName(), 0,player.getPassHash()));
+        PrintWriter writer = new PrintWriter(new FileWriter(new File(fileURL.toURI()),true));
+        writer.append('\n');
+        writer.append(player.getNickName()).append("/0/").append(String.valueOf(player.getPassHash()));
         writer.close();
         players.sort(null);
     }

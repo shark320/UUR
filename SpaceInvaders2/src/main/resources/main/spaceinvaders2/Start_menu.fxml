@@ -7,11 +7,11 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="417.0" style="-fx-background-color: #3a0ca3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="main.spaceinvaders2.StartMenuController">
+            fx:controller="main.spaceinvaders2.StartMenuController" stylesheets="@test.css">
    <center>
       <VBox alignment="CENTER" prefHeight="673.0" prefWidth="364.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" text="Hello, Darth Vader!" textFill="#fca311">
+            <Label fx:id = "userLabel" alignment="CENTER" text="" textFill="#fca311">
                <font>
                   <Font size="35.0" />
                </font>
@@ -23,7 +23,7 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" style="-fx-background-color: #f4a261;" text="Change User" textAlignment="CENTER">
+                  <Button alignment="CENTER" mnemonicParsing="false" prefWidth="150.0" style="-fx-background-color: #f4a261;" text="Change User" textAlignment="CENTER" onAction="#onChangeUserClick">
                      <font>
                         <Font size="14.0" />
                      </font></Button>
