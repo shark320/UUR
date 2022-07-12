@@ -49,14 +49,14 @@ public class PlayersList {
             Scanner sc = new Scanner(playerFile);
             while (sc.hasNextLine()) {
                 String[] data = sc.nextLine().split("/");
-                System.out.println(Arrays.toString(data));
+/*                System.out.println(Arrays.toString(data));*/
                 if (data.length != 3) throw new IllegalArgumentException("Invalid data.txt string format");
                 String nick = data[0];
                 int scores = Integer.parseInt(data[1]);
                 int pass = Integer.parseInt(data[2]);
                 players.add(new Player(nick, scores, pass));
             }
-            System.out.println(players.size());
+/*            System.out.println(players.size());*/
         }catch (URISyntaxException e) {
             e.printStackTrace();
         }

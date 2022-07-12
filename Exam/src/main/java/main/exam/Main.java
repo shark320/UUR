@@ -93,6 +93,8 @@ public class Main extends Application {
      */
     private TextField power;
 
+    private ShipViewListCellFactory shipViewListCellFactory = new ShipViewListCellFactory();
+
 
     //////////////////////////////////////////////////////////////////////////////
     //                                                                          //
@@ -107,7 +109,7 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage stage) {
-        stage.setTitle("Font table");
+        stage.setTitle("Exam application");
         Parent root = createRoot();
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -149,6 +151,8 @@ public class Main extends Application {
             updateSelectionActionComponents();
         });
 
+        components.setMinWidth(300);
+
         componentView = components;
 
         Label label = new Label("Available components");
@@ -173,9 +177,11 @@ public class Main extends Application {
 
         VBox mainBox = new VBox(DEF_SPACING);
         mainBox.setPadding(new Insets(DEF_PADDING));
+        mainBox.setAlignment(Pos.CENTER);
 
         //main color ColorPicker
         ColorPicker mainPicker = new ColorPicker(ship.getMainColor());
+        mainPicker.setPrefWidth(300);
         Label mainLabel = new Label("Main ship color");
         mainLabel.setFont(new Font(15));
         mainBox.getChildren().addAll(mainLabel, mainPicker);
@@ -183,13 +189,16 @@ public class Main extends Application {
         mainPicker.setOnAction(e -> {
             ship.setMainColor(mainPicker.getValue());
             setColors(shipBox);
+            shipViewListCellFactory.setMainColor(ship.getMainColor());
         });
 
         //Additional color ColorPicker
         VBox additionalBox = new VBox(DEF_SPACING);
         additionalBox.setPadding(new Insets(DEF_PADDING));
+        additionalBox.setAlignment(Pos.CENTER);
 
         ColorPicker additionalPicker = new ColorPicker(ship.getAdditionalColor());
+        additionalPicker.setPrefWidth(300);
         Label additionalLabel = new Label("Additional ship color");
         additionalLabel.setFont(new Font(15));
         additionalBox.getChildren().addAll(additionalLabel, additionalPicker);
@@ -197,9 +206,11 @@ public class Main extends Application {
         additionalPicker.setOnAction(e -> {
             ship.setAdditionalColor(additionalPicker.getValue());
             setColors(shipBox);
+            shipViewListCellFactory.setTextColor(ship.getAdditionalColor());
         });
 
         colorPickerBox.getChildren().addAll(mainBox, additionalBox);
+
         return colorPickerBox;
     }
 
@@ -419,6 +430,8 @@ public class Main extends Application {
             selectedShipComponent.set(shipView.getSelectionModel().getSelectedItem());
         });
 
+        //shipView.setCellFactory(shipViewListCellFactory);
+
         //deleting component from the ship
         Button deleteBtn = new Button("Delete component");
         deleteBtn.setFont(new Font(15));
@@ -440,6 +453,8 @@ public class Main extends Application {
 
         shipBox.getChildren().addAll(title, nameBox, idBox, weightBox, powerBox, consumptionBox, powerShortage, shipView, deleteBtn);
         setColors(shipBox);
+        shipViewListCellFactory.setMainColor(ship.getMainColor());
+        shipViewListCellFactory.setTextColor(ship.getAdditionalColor());
         return shipBox;
     }
 
@@ -461,7 +476,7 @@ public class Main extends Application {
         pane.setBackground(new Background(new BackgroundFill(ship.getMainColor(), CornerRadii.EMPTY, Insets.EMPTY)));
         pane.getChildren().forEach(e -> {
             if (e instanceof TextField) {
-                ((TextField) e).setBackground(new Background(new BackgroundFill(ship.getMainColor().darker(), CornerRadii.EMPTY, Insets.EMPTY)));
+                ((TextField) e).setBackground(new Background(new BackgroundFill(ship.getMainColor().darker(), new CornerRadii(3), Insets.EMPTY)));
                 ((TextField) e).setStyle(String.format("-fx-text-inner-color: #%s;", ship.getAdditionalColor().toString().substring(2, 8)));
             } else {
                 if (e instanceof Pane) {

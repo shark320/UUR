@@ -19,9 +19,9 @@ public class StartMenuController implements Initializable {
     protected Button btnStart;
     @FXML
     protected void onStartClick(){
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("AAAAAAAAAAA");
-        alert.show();
+        SpaceInvaders2App.primaryStage.setScene(SpaceInvaders2App.game);
+        SpaceInvaders2App.isRunningGame = true;
+        SpaceInvaders2App.runGame();
     }
 
     @FXML
