@@ -3,10 +3,11 @@ package main.spaceinvaders2.gamemodels;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.util.List;
+
 public abstract class AbstractModel {
 
     protected static final double DEF_MOVE_DISTANCE = 5;
-
     protected double x;
 
     protected double y;
@@ -29,14 +30,20 @@ public abstract class AbstractModel {
 
     protected ImageView view;
 
-    protected long fireRate = 1000;
+
+    protected Image laserTexture;
+
+
+    protected long fireRate = 1500;
 
     protected long previousShot = fireRate;
 
-    protected AbstractModel(double x, double y, Image texture) {
+
+    protected AbstractModel(double x, double y, Image texture, Image laserTexture) {
         this.x = x;
         this.y = y;
         this.texture = texture;
+        this.laserTexture = laserTexture;
         width = texture.getWidth();
         height = texture.getHeight();
         view = new ImageView(texture);
@@ -44,10 +51,11 @@ public abstract class AbstractModel {
         view.setY(y - height / 2);
     }
 
-    protected AbstractModel(Image texture) {
+    protected AbstractModel(Image texture, Image laserTexture) {
         this.x = 0;
         this.y = 0;
         this.texture = texture;
+        this.laserTexture = laserTexture;
         width = texture.getWidth();
         height = texture.getHeight();
         view = new ImageView(texture);
@@ -131,13 +139,7 @@ public abstract class AbstractModel {
         view.setY(y - height / 2);
     }
 
-    public Laser shot(long elapsed){
-        if (previousShot+fireRate<elapsed){
-            previousShot=elapsed;
-            return new;
-        }
-        return false;
-    }
+    public abstract List<Laser> shot(long elapsed);
 
     public ImageView getView() {
         return view;

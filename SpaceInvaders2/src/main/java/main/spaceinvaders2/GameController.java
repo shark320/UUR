@@ -4,6 +4,7 @@ import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -21,17 +22,21 @@ import java.util.ResourceBundle;
 
 import static main.spaceinvaders2.SpaceInvaders2App.createUser;
 
-public class GameController {
+public class GameController implements Initializable{
 
     private static final double PANE_WIDTH = 417.2;
 
     private static final double PANE_HEIGHT = 619.2;
 
     @FXML
-    BorderPane root;
+    public HBox topPane;
 
     @FXML
-    Pane gamePane;
+    public BorderPane root;
+
+    @FXML
+    public Pane gamePane;
+    public HBox lifeBox;
 
 
     public void test() {
@@ -47,7 +52,15 @@ public class GameController {
         return gamePane;
     }
 
+    public HBox getLifeBox(){
+        return lifeBox;
+    }
 
 
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Group topElements = new Group();
+        topElements.getChildren().add(topPane);
+        root.getChildren().add(topElements);
+    }
 }

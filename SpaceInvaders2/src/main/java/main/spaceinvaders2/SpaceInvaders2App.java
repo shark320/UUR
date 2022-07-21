@@ -51,6 +51,7 @@ public class SpaceInvaders2App extends Application {
         stage.setTitle("SpaceInvaders");
         primaryStage = stage;
         showStartMenu();
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -71,7 +72,7 @@ public class SpaceInvaders2App extends Application {
         FXMLLoader loader = new FXMLLoader();
         game = new Scene(loader.load(SpaceInvaders2App.class.getResource("Game.fxml").openStream()));
         gameController = loader.getController();
-        gameEngine = GameEngine.getGameEngine(gameController.getPane());
+        gameEngine = GameEngine.getGameEngine(gameController.getPane(), gameController.getLifeBox());
     }
 
     public static void runGame(){

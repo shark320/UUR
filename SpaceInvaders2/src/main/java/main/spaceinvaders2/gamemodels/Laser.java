@@ -10,19 +10,26 @@ public class Laser {
 
     private double y;
 
-    private double speed;
+    private double speed=5;
+
+    private double width;
+
+    private double height;
 
     private ImageView view;
 
     private final Direction direction;
 
-    public Laser(int x, int y,Image texture, Direction direction){
+    public Laser(double x, double y,Image texture, Direction direction){
         this.x=x;
         this.y=y;
         this.direction = direction;
-        view = new ImageView(texture);
-        view.setX(x-texture.getWidth());
-        view.setY(y-texture.getHeight());
+        this.width = texture.getWidth();
+        this.height = texture.getHeight();
+        this.view = new ImageView(texture);
+        this.view.setX(x-texture.getWidth()/2);
+        this.view.setY(y-texture.getHeight()/2);
+
     }
 
     public double getSpeed() {
@@ -33,6 +40,23 @@ public class Laser {
         this.speed = speed;
     }
 
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+
+    public double getWidth() {
+        return width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
     public ImageView getView() {
         return view;
     }
@@ -41,12 +65,25 @@ public class Laser {
         return direction;
     }
 
+    public void scale (double scale){
+        view.setPreserveRatio(true);
+
+        width = width * scale;
+        height = height * scale;
+
+        view.setFitWidth(width);
+        view.setFitHeight(height);
+
+        view.setX(x - width / 2);
+        view.setY(y - height / 2);
+    }
+
     public void move(){
         if (direction == Direction.UP){
             y=y-speed;
         }else {
             y=y+speed;
         }
-        view.setY(y-view.getImage().getHeight());
+        view.setY(y-view.getImage().getHeight()/2);
     }
 }

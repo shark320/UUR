@@ -9,7 +9,7 @@
 
 <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="417.0" style="-fx-background-color: #3a0ca3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.spaceinvaders2.GameController">
    <top>
-      <HBox prefHeight="54.0" prefWidth="417.0" BorderPane.alignment="CENTER">
+      <HBox fx:id="topPane" prefHeight="54.0" prefWidth="417.0" BorderPane.alignment="CENTER" >
          <children>
             <HBox fx:id="scoresBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
@@ -30,17 +30,12 @@
             </HBox>
             <HBox fx:id="lifeBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="LIFE">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
                </children>
             </HBox>
          </children>
       </HBox>
    </top>
    <center>
-      <Pane fx:id="gamePane" prefHeight="200.0" prefWidth="200.0"  BorderPane.alignment="CENTER" />
+      <Pane fx:id="gamePane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>   
 </BorderPane>
