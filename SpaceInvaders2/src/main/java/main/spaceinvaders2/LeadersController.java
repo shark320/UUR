@@ -33,6 +33,10 @@ public class LeadersController implements Initializable {
         leadersView.itemsProperty().bind(SpaceInvaders2App.players.playersProperty());
     }
 
+    public void update(){
+        leadersView.refresh();
+    }
+
     @FXML
     protected void onCloseClick() throws IOException, URISyntaxException {
         SpaceInvaders2App.showStartMenu();

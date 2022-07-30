@@ -12,6 +12,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import main.spaceinvaders2.gamemodels.AbstractModel;
 import main.spaceinvaders2.gamemodels.EnemyModel;
 import main.spaceinvaders2.gamemodels.PlayerModel;
@@ -36,7 +37,12 @@ public class GameController implements Initializable{
 
     @FXML
     public Pane gamePane;
+    @FXML
     public HBox lifeBox;
+    @FXML
+    public HBox scoresBox;
+    @FXML
+    public Text scores;
 
 
     public void test() {
@@ -55,6 +61,7 @@ public class GameController implements Initializable{
     public HBox getLifeBox(){
         return lifeBox;
     }
+
 
 
     @Override

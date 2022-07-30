@@ -20,6 +20,8 @@ public class PlayerModel extends AbstractModel {
         return health;
     }
 
+
+
     public void setHealth(int health) {
         if (health <= 0) throw new IllegalArgumentException("Health should be a positive integer");
         this.health = health;
@@ -51,6 +53,9 @@ public class PlayerModel extends AbstractModel {
             previousShot = elapsed;
             Laser laser1 = new Laser(x + width / 6, y, laserTexture, Direction.UP);
             Laser laser2 = new Laser(x - width / 6, y, laserTexture, Direction.UP);
+
+            laser1.setSpeed(laserSpeed);
+            laser2.setSpeed(laserSpeed);
 
             LinkedList<Laser> lasers = new LinkedList<>();
             lasers.add(laser1);

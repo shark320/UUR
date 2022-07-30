@@ -13,6 +13,8 @@ import java.util.ResourceBundle;
 public class StartMenuController implements Initializable {
 
     @FXML
+    public Label scoresLabel;
+    @FXML
     protected Label userLabel;
 
     @FXML

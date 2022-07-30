@@ -36,6 +36,8 @@ public abstract class AbstractModel {
 
     protected long fireRate = 1500;
 
+    protected double laserSpeed=5;
+
     protected long previousShot = fireRate;
 
 
@@ -95,6 +97,28 @@ public abstract class AbstractModel {
 
     public double getHeight() {
         return texture.getHeight();
+    }
+
+    public double getLaserSpeed() {
+        return laserSpeed;
+    }
+
+    public void setLaserSpeed(double laserSpeed) {
+        if (! (laserSpeed>0)){
+            throw new IllegalArgumentException("Laser speed should be a positive double");
+        }
+        this.laserSpeed = laserSpeed;
+    }
+
+    public long getFireRate() {
+        return fireRate;
+    }
+
+    public void setFireRate(long fireRate) {
+        if (!(fireRate>0)){
+            throw new IllegalArgumentException("Fire rate should be a positive long");
+        }
+        this.fireRate = fireRate;
     }
 
     public void setBorders(double up, double down, double left, double right) {

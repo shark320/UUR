@@ -27,8 +27,8 @@ public class Laser {
         this.width = texture.getWidth();
         this.height = texture.getHeight();
         this.view = new ImageView(texture);
-        this.view.setX(x-texture.getWidth()/2);
-        this.view.setY(y-texture.getHeight()/2);
+        this.view.setX(x-width/2);
+        this.view.setY(y-height/2);
 
     }
 

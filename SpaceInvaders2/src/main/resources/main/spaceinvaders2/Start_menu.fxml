@@ -31,7 +31,7 @@
                      <font>
                         <Font size="14.0" />
                      </font></Button>
-                  <Label text="Total score: 0" textFill="#fca311" />
+                  <Label fx:id="scoresLabel" text="Total score: 0" textFill="#fca311" />
                </children>
             </VBox>
          </children>

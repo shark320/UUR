@@ -4,13 +4,11 @@ import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import main.spaceinvaders2.SpaceInvaders2App;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Arrays;
@@ -18,7 +16,7 @@ import java.util.Scanner;
 
 public class PlayersList {
 
-    private URL fileURL;
+    private File file;
 
     private static final Player defaultPlayer = new Player("Default player", 0, 0);
 
@@ -44,23 +42,32 @@ public class PlayersList {
 
     public void readFromFile () throws IOException {
         try {
-            fileURL = getClass().getClassLoader().getResource("data.txt");
-            File playerFile = new File(fileURL.toURI());
-            Scanner sc = new Scanner(playerFile);
+            //fileURL = getClass().getClassLoader().getResource("data.txt");
+            file = new File("data.txt");
+            Scanner sc = new Scanner(file);
             while (sc.hasNextLine()) {
                 String[] data = sc.nextLine().split("/");
-/*                System.out.println(Arrays.toString(data));*/
+                /*                System.out.println(Arrays.toString(data));*/
                 if (data.length != 3) throw new IllegalArgumentException("Invalid data.txt string format");
                 String nick = data[0];
                 int scores = Integer.parseInt(data[1]);
                 int pass = Integer.parseInt(data[2]);
                 players.add(new Player(nick, scores, pass));
             }
-/*            System.out.println(players.size());*/
-        }catch (URISyntaxException e) {
-            e.printStackTrace();
+        }catch(FileNotFoundException fnfe){
+            file = new File("data.txt");
         }
     }
+
+    public void update (Player player){
+        players.removeIf(p->{
+            return p.getNickName().equals(player.getNickName());
+        });
+        players.add(player);
+        players.sort(null);
+    }
+/*            System.out.println(players.size());*/
+
 
     public void initTest(){
         for (int i = 0; i < 30; i++) {
@@ -71,18 +78,27 @@ public class PlayersList {
 
     public void addNewPlayer (String nick, int pass) throws IOException, URISyntaxException {
         players.add(new Player(nick, 0,pass));
-        PrintWriter writer = new PrintWriter(new FileWriter(new File(fileURL.toURI()),true));
-        writer.append(nick).append("/0/").append(String.valueOf(pass)).append("\n");
-        writer.close();
         players.sort(null);
     }
 
-    public void addNewPlayer (Player player) throws IOException, URISyntaxException {
-        players.add(new Player(player.getNickName(), 0,player.getPassHash()));
-        PrintWriter writer = new PrintWriter(new FileWriter(new File(fileURL.toURI()),true));
-        writer.append('\n');
-        writer.append(player.getNickName()).append("/0/").append(String.valueOf(player.getPassHash()));
+    public void savePlayers() throws IOException {
+        players.remove(defaultPlayer);
+        PrintWriter writer = new PrintWriter(new FileWriter(file, false), true);
+        for (Player player: players) {
+            writer.append(player.getNickName()).append("/").append(String.valueOf(player.getMaxScores())).append("/").append(String.valueOf(player.getPassHash()));
+            writer.append('\n');
+        }
         writer.close();
+    }
+
+    public void addNewPlayer (Player player)  {
+        for (Player p:players){
+            if (p.getNickName().equals(player.getNickName())){
+                SpaceInvaders2App.showError("There is already player with the same name");
+                return;
+            }
+        }
+        players.add(new Player(player.getNickName(), 0,player.getPassHash()));
         players.sort(null);
     }
 

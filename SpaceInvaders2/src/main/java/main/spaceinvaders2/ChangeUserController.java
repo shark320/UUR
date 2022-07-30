@@ -1,33 +1,39 @@
 package main.spaceinvaders2;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.layout.BorderPane;
 import main.spaceinvaders2.datamodel.Player;
 
-public class ChangeUserController {
+import java.net.URL;
+import java.util.ResourceBundle;
 
+public class ChangeUserController implements Initializable {
+
+    @FXML
+    public BorderPane logInPane;
     @FXML
     protected TextField userNameField;
 
     @FXML
     protected PasswordField passwordField;
 
+
+
     @FXML
     protected void onLoginClick(){
         Player player = checkUsername(userNameField.getText());
         if (player ==null){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("This user does not exist");
-            alert.show();
+            SpaceInvaders2App.showError("This user does not exist");
             return;
         }
 
         if (passwordField.getText().hashCode() != player.getPassHash()){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("Incorrect password");
-            alert.show();
+            SpaceInvaders2App.showError("Incorrect password");
             return;
         }
 
@@ -53,4 +59,12 @@ public class ChangeUserController {
         return null;
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        logInPane.setOnKeyPressed(e->{
+            if (e.getCode()== KeyCode.ENTER){
+                onLoginClick();
+            }
+        });
+    }
 }

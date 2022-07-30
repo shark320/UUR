@@ -4,24 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0928ffc5-37bc-4795-982f-37647c8203f9" name="Changes" comment="Global">
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/LaserType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/textures/explosion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/textures/laser_hit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/textures/lasers/blue_bullet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/textures/lasers/blue_laser.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/textures/lasers/red_bullet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/textures/lasers/red_laser.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/textures/life.png" afterDir="false" />
+    <list default="true" id="0928ffc5-37bc-4795-982f-37647c8203f9" name="Changes" comment="SpaceInvaders commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/effects/ExplosionEffect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/effects/HitEffect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/ChangeUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/ChangeUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/CreateUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/LeadersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/LeadersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/SpaceInvaders2App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/SpaceInvaders2App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/StartMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/StartMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/datamodel/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/datamodel/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/datamodel/PlayersList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/datamodel/PlayersList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/AbstractModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/AbstractModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/EnemyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/EnemyModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/Laser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/Laser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/PlayerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/PlayerModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/CreateUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/CreateUser.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/Game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/Game.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/LogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/LogIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/Start_menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/Start_menu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,8 +70,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -84,18 +87,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/vladi/OneDrive/Desktop/FAV/UUR/SpaceInvaders2/src/main/resources/main/spaceinvaders2/textures",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vladi/OneDrive/Desktop/FAV/UUR/SpaceInvaders2/src/main/resources/main/spaceinvaders2/textures&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\vladi\OneDrive\Desktop\FAV\UUR\SpaceInvaders2\src\main\resources\main\spaceinvaders2\textures" />
@@ -162,7 +165,12 @@
       <workItem from="1656943659159" duration="2894000" />
       <workItem from="1657554905899" duration="10653000" />
       <workItem from="1657615264291" duration="4570000" />
-      <workItem from="1658412501709" duration="6200000" />
+      <workItem from="1658412501709" duration="7894000" />
+      <workItem from="1658751981787" duration="7262000" />
+      <workItem from="1658839865683" duration="8690000" />
+      <workItem from="1658871718867" duration="4200000" />
+      <workItem from="1658927261736" duration="7039000" />
+      <workItem from="1658939576781" duration="412000" />
     </task>
     <task id="LOCAL-00001" summary="Global">
       <created>1653063041575</created>
@@ -178,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657615389121</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="SpaceInvaders commit">
+      <created>1658433729735</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1658433729735</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,19 +212,20 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Global" />
-    <option name="LAST_COMMIT_MESSAGE" value="Global" />
+    <MESSAGE value="SpaceInvaders commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="SpaceInvaders commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/main/spaceinvaders2/GameEngine.java</url>
-          <line>169</line>
-          <properties class="main.spaceinvaders2.GameEngine" method="moveEnemies">
+          <url>file://$PROJECT_DIR$/src/main/java/main/spaceinvaders2/datamodel/Player.java</url>
+          <line>43</line>
+          <properties class="main.spaceinvaders2.datamodel.Player" method="compareTo">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -37,7 +37,7 @@ public class Player implements Comparable<Player> {
     }
 
     public void setMaxScores(int maxScores) {
-        this.maxScores = maxScores;
+        this.maxScores = Math.max(this.maxScores, maxScores);
     }
 
     @Override

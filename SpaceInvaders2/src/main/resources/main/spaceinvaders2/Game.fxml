@@ -18,7 +18,7 @@
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <Text fill="#fca311" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                  <Text fx:id="scores" fill="#fca311" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                      <font>
                         <Font size="18.0" />
                      </font>

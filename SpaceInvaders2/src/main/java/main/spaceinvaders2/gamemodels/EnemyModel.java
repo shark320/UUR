@@ -82,7 +82,6 @@ public class EnemyModel extends AbstractModel {
     public void setMovingVector(double movingVector) {
         if (movingVector < 0 || movingVector > (2 * Math.PI))
             throw new IllegalArgumentException("Moving vector should be in range [0, 2*PI]");
-        System.out.println(movingVector);
         this.movingVector=movingVector;
     }
 
@@ -90,6 +89,10 @@ public class EnemyModel extends AbstractModel {
 
     public double getMovingVector() {
         return movingVector;
+    }
+
+    public ModelType getModelType(){
+        return modelType;
     }
 
     @Override
@@ -104,6 +107,8 @@ public class EnemyModel extends AbstractModel {
                         LinkedList<Laser> lasers = new LinkedList<>();
                         Laser laser1 = new Laser(x + width / 3, y, laserTexture, Direction.DOWN);
                         Laser laser2 = new Laser(x - width / 3, y, laserTexture, Direction.DOWN);
+                        laser1.setSpeed(laserSpeed);
+                        laser2.setSpeed(laserSpeed);
                         lasers.add(laser1);
                         lasers.add(laser2);
                         previousShot = elapsed;
