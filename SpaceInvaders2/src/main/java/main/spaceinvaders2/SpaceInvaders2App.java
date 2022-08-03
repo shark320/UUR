@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import main.spaceinvaders2.datamodel.Player;
 import main.spaceinvaders2.datamodel.PlayersList;
 
@@ -101,6 +102,11 @@ public class SpaceInvaders2App extends Application {
     public static Scene changeUser;
 
     /**
+     * Help information scene
+     */
+    public static Scene helpInfo;
+
+    /**
      * Create user scene
      */
     public static Scene createUser;
@@ -150,6 +156,8 @@ public class SpaceInvaders2App extends Application {
         game = new Scene(loader.load(Objects.requireNonNull(SpaceInvaders2App.class.getResource("Game.fxml")).openStream()));
         gameController = loader.getController();
         gameEngine = GameEngine.getGameEngine(gameController);
+
+        helpInfo = new Scene(new FXMLLoader(SpaceInvaders2App.class.getResource("Help.fxml")).load());
     }
 
     /**
@@ -195,6 +203,12 @@ public class SpaceInvaders2App extends Application {
         stage.setTitle("SpaceInvaders");
         primaryStage = stage;
         showStartMenu();
+/*        final String cssDefault = "-fx-border-color: blue;\n"
+                + "-fx-border-insets: 5;\n"
+                + "-fx-border-width: 3;\n"
+                + "-fx-border-style: dashed;\n";
+        startMenu.getStylesheets().add(cssDefault);*/
+        startMenu.getStylesheets().add(Objects.requireNonNull(getClass().getClassLoader().getResource("test.css")).toExternalForm());
         stage.setResizable(false);
         stage.show();
 

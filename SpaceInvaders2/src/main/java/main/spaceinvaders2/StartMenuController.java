@@ -3,6 +3,7 @@ package main.spaceinvaders2;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 
 import java.net.URL;
@@ -24,6 +25,12 @@ public class StartMenuController implements Initializable {
     public Label scoresLabel;
 
     /**
+     * Help info link
+     */
+    @FXML
+    public Hyperlink helpLink;
+
+    /**
      * Label with current username
      */
     @FXML
@@ -34,6 +41,8 @@ public class StartMenuController implements Initializable {
      */
     @FXML
     protected Button btnStart;
+
+
 
     /**
      * On "Start" button click action
@@ -68,5 +77,10 @@ public class StartMenuController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         userLabel.setText(SpaceInvaders2App.currentPlayer.getNickName());
         userLabel.textProperty().bind(SpaceInvaders2App.currentPlayerGreetings);
+    }
+
+    @FXML
+    public void helpClick() {
+        SpaceInvaders2App.primaryStage.setScene(SpaceInvaders2App.helpInfo);
     }
 }

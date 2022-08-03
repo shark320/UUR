@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:controller="main.spaceinvaders2.HelpController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="417.0" style="-fx-background-color: #3a0ca3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Label text="HELP" textFill="#fca311" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+   </top>
+   <bottom>
+      <Button mnemonicParsing="false" onAction="#onCloseClick" prefWidth="100.0" style="-fx-background-color: #f4a261;" text="CLOSE" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="30.0" />
+         </BorderPane.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </bottom>
+   <center>
+      <TextArea fx:id="textArea" editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-control-inner-background: #3a0ca3; -fx-border-color: #3a0ca3; -fx-background-color: #3a0ca3; -fx-text-fill: #fca311;" text="Controls:&#10; you can control your ship using buttons&#10;↑ (UP) &#10;↓ (DOWN)&#10;→ (RIGHT) &#10;←(LEFT)&#10;&#10;Rules:&#10;&#10;Player has 5 life. &#10;&#10;Game is over when the player has run out of lives. &#10;&#10;Player's lives are reduced with hit by an enemy laser.&#10;&#10;Each enemy has its own amount of hit points and they will decrease when the player's laser hits.&#10;&#10;The player will receive scores when the enemy is destroyed.&#10;&#10;The number of points depends on the amount of hit points of the destroyed enemy.&#10;&#10;&#10;Version: 1.0&#10;©Volodymyr Pavlov &#10;E-mail: vladimir.pavlov.mail@gmail.com" wrapText="true" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextArea>
+   </center>
+</BorderPane>
