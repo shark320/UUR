@@ -1,5 +1,11 @@
 package main.spaceinvaders2.gamemodels;
 
+/**
+ * Model type
+ *
+ * @author Volodymyr Pavlov
+ * @version 30.07.2022
+ */
 public enum ModelType {
     PLAYER,
     SOLDIER_1,
@@ -12,5 +18,5 @@ public enum ModelType {
     BOSS_4,
     BOSS_5,
     BOSS_6,
-    BOSS_7;
+    BOSS_7
 }

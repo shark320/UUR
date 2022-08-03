@@ -3,7 +3,6 @@ package main.spaceinvaders2;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -11,15 +10,22 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import main.spaceinvaders2.datamodel.Player;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 
-
+/**
+ * Controller of the "Start menu" scene
+ *
+ * @author Volodymyr Pavlov
+ * @version 30.07.2022
+ */
 public class LeadersController implements Initializable {
 
+    /**
+     * Leaders ListView
+     */
     @FXML
     private ListView<Player> leadersView;
 
@@ -27,18 +33,24 @@ public class LeadersController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         leadersView.setCellFactory(new LeadersCellFactory());
-        //System.out.println(getClass().getClassLoader().getResource("scrollbar.css"));
-        leadersView.getStylesheets().add(getClass().getClassLoader().getResource("scrollbar.css").toExternalForm());
+        leadersView.getStylesheets().add(Objects.requireNonNull(getClass().getClassLoader().getResource("scrollbar.css")).toExternalForm());
         leadersView.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
         leadersView.itemsProperty().bind(SpaceInvaders2App.players.playersProperty());
     }
 
-    public void update(){
+    /**
+     * Update info in the leadersView ListView
+     */
+    public void update() {
         leadersView.refresh();
     }
 
+    /**
+     * On "Close" button click action
+     * Returns to the Main menu
+     */
     @FXML
-    protected void onCloseClick() throws IOException, URISyntaxException {
+    protected void onCloseClick() {
         SpaceInvaders2App.showStartMenu();
     }
 }

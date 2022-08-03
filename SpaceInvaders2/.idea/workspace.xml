@@ -5,26 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0928ffc5-37bc-4795-982f-37647c8203f9" name="Changes" comment="SpaceInvaders commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/effects/ExplosionEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/effects/HitEffect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/ChangeUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/ChangeUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/CreateUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/GameEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/LeadersCellFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/LeadersCellFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/LeadersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/LeadersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/SpaceInvaders2App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/SpaceInvaders2App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/StartMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/StartMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/datamodel/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/datamodel/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/datamodel/PlayersList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/datamodel/PlayersList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/effects/ExplosionEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/effects/ExplosionEffect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/effects/HitEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/effects/HitEffect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/AbstractModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/AbstractModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/Direction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/EnemyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/EnemyModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/Laser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/Laser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/LaserType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/LaserType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/ModelType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/ModelType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/PlayerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/spaceinvaders2/gamemodels/PlayerModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/CreateUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/CreateUser.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/Game.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/Game.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/LogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/LogIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/Start_menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main/spaceinvaders2/Start_menu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +96,8 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/vladi/OneDrive/Desktop/FAV/UUR/SpaceInvaders2/src/main/resources/main/spaceinvaders2/textures&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -171,6 +172,9 @@
       <workItem from="1658871718867" duration="4200000" />
       <workItem from="1658927261736" duration="7039000" />
       <workItem from="1658939576781" duration="412000" />
+      <workItem from="1659171411358" duration="3714000" />
+      <workItem from="1659456874558" duration="4848000" />
+      <workItem from="1659527444768" duration="4695000" />
     </task>
     <task id="LOCAL-00001" summary="Global">
       <created>1653063041575</created>
@@ -193,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658433729735</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="SpaceInvaders commit">
+      <created>1659171445422</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1659171445422</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,20 +225,5 @@
     <MESSAGE value="Global" />
     <MESSAGE value="SpaceInvaders commit" />
     <option name="LAST_COMMIT_MESSAGE" value="SpaceInvaders commit" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/main/spaceinvaders2/datamodel/Player.java</url>
-          <line>43</line>
-          <properties class="main.spaceinvaders2.datamodel.Player" method="compareTo">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

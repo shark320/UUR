@@ -1,9 +1,6 @@
 package main.spaceinvaders2;
 
-import javafx.animation.AnimationTimer;
 import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -24,89 +21,229 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-import static javafx.scene.input.KeyCode.ESCAPE;
-import static javafx.scene.input.KeyCode.W;
-
-
+/**
+ * Game engine, calculates all moves and collisions, draw all game objects on the game pane
+ *
+ * @author Volodymyr Pavlov
+ * @version 30.07.2022
+ */
 public class GameEngine {
 
-    private static boolean debug = true;
+    //--------------------------------------------------------------------------//
+    //                                                                          //
+    //                              Static constants                            //
+    //                                                                          //
+    //--------------------------------------------------------------------------//
 
-    private static boolean godMode = false;
-
+    /**
+     * Countdown duration in the seconds
+     */
     private static final long COUNTDOWN_DURATION = 3;
 
+    /**
+     * Zero level enemies count
+     */
     private static final int INIT_ENEMY_COUNT = 5;
 
+    /**
+     * Zero level enemies type
+     */
     private static final ModelType INIT_ENEMY_TYPE = ModelType.SOLDIER_1;
 
+    /**
+     * Game pane width
+     */
     private static final double PANE_WIDTH = 417.2;
 
+    /**
+     * Game pane height
+     */
     private static final double PANE_HEIGHT = 673.2;
 
+    /**
+     * Down border for the enemies
+     */
     private static final double DOWN_BORDER = 3 * PANE_HEIGHT / 5;
 
-    private static double playerStartX;
-
-    private static double playerStartY;
-
-    private long startCountdown = 0;
-
-    private static GameEngine engine;
-
-    private PlayerModel player;
-
-    private List<EnemyModel> enemies = new LinkedList<>();
-
-    private final Pane gamePane;
-
-    private final HBox lifeBox;
-
-    private final Text scoresField;
-
-    private final Map<ModelType, Image> textures = new HashMap<>();
-
-    private final Text countdownSeconds = new Text();
-
-    private final Map<LaserType, Image> laserTextures = new HashMap<>();
-
-    private final LinkedList<Laser> lasers = new LinkedList<>();
-
-    private final LinkedList<HitEffect> hits = new LinkedList<>();
-
-    private final LinkedList<ExplosionEffect> explosions = new LinkedList<>();
-
-    private final Map<ModelType, Integer> killScores = new HashMap<>();
-
-    private Image lifeTexture;
-
-    private Image hitTexture;
-
-    private int level = 0;
-
-    private boolean noLasers = false;
-
-    private boolean isCountdown = true;
-
-    private boolean isPaused = false;
-
-    private final Text pauseText = new Text("PAUSED");
-
-    private final Group group = new Group();
-
-    private final Group effectsGroup = new Group();
-
-    private boolean gameOver = false;
-
-    private int scores = 30;
-
+    /**
+     * Count of explosion animation images count
+     */
     private static final int EXPLOSION_IMAGE_COUNT = 16;
 
-    private Image[] explosionTextures = new Image[EXPLOSION_IMAGE_COUNT];
+    //--------------------------------------------------------------------------//
+    //                                                                          //
+    //                             Static variables                             //
+    //                                                                          //
+    //--------------------------------------------------------------------------//
 
-    private Text godModeText = new Text("God mode activated");
+    /**
+     * Is debug mode active
+     */
+    private static final boolean DEBUG = true;
 
+    /**
+     * Is god mode active
+     */
+    private static boolean godMode = false;
 
+    /**
+     * Start of the countdown
+     */
+    private long startCountdown = 0;
+
+    /**
+     * The only one GameEngine instance
+     */
+    private static GameEngine engine;
+
+    //--------------------------------------------------------------------------//
+    //                                                                          //
+    //                           Instance constants                             //
+    //                                                                          //
+    //--------------------------------------------------------------------------//
+
+    /**
+     * List of enemies models
+     */
+    private final List<EnemyModel> enemies = new LinkedList<>();
+
+    /**
+     * Game pane with all models
+     */
+    private final Pane gamePane;
+
+    /**
+     * Life HBox
+     */
+    private final HBox lifeBox;
+
+    /**
+     * Scores text field
+     */
+    private final Text scoresField;
+
+    /**
+     * Map of the models textures
+     */
+    private final Map<ModelType, Image> textures = new HashMap<>();
+
+    /**
+     * Text field with countdown seconds
+     */
+    private final Text countdownSeconds = new Text();
+
+    /**
+     * Map of the laser textures
+     */
+    private final Map<LaserType, Image> laserTextures = new HashMap<>();
+
+    /**
+     * List with all present lasers
+     */
+    private final LinkedList<Laser> lasers = new LinkedList<>();
+
+    /**
+     * List with all present hit effects
+     */
+    private final LinkedList<HitEffect> hits = new LinkedList<>();
+
+    /**
+     * List with all present explosions effects
+     */
+    private final LinkedList<ExplosionEffect> explosions = new LinkedList<>();
+
+    /**
+     * Map with kill scores for each enemy model
+     */
+    private final Map<ModelType, Integer> killScores = new HashMap<>();
+
+    /**
+     * Pause text
+     */
+    private final Text pauseText = new Text("PAUSED");
+
+    /**
+     * Group of the models
+     */
+    private final Group modelsGroup = new Group();
+
+    /**
+     * Group of the effects
+     */
+    private final Group effectsGroup = new Group();
+
+    /**
+     * Explosion textures array
+     */
+    private final Image[] explosionTextures = new Image[EXPLOSION_IMAGE_COUNT];
+
+    /**
+     * God mode info text
+     */
+    private final Text godModeText = new Text("God mode activated");
+
+    //--------------------------------------------------------------------------//
+    //                                                                          //
+    //                           Instance variables                             //
+    //                                                                          //
+    //--------------------------------------------------------------------------//
+
+    /**
+     * Player model
+     */
+    private PlayerModel player;
+
+    /**
+     * Life texture
+     */
+    private Image lifeTexture;
+
+    /**
+     * Hit texture
+     */
+    private Image hitTexture;
+
+    /**
+     * Current level
+     */
+    private int level = 0;
+
+    /**
+     * If models can not fire lasers
+     */
+    private boolean noLasers = false;
+
+    /**
+     * If it's countdown
+     */
+    private boolean isCountdown = true;
+
+    /**
+     * If the game is paused
+     */
+    private boolean isPaused = false;
+
+    /**
+     * Is game over
+     */
+    private boolean gameOver = false;
+
+    /**
+     * Current scores
+     */
+    private int scores;
+
+    //--------------------------------------------------------------------------//
+    //                                                                          //
+    //                              Constructors                                //
+    //                                                                          //
+    //--------------------------------------------------------------------------//
+
+    /**
+     * Private class constructor
+     *
+     * @param controller - Controller of the "Game" scene
+     */
     private GameEngine(GameController controller) {
 
         this.gamePane = controller.gamePane;
@@ -126,6 +263,18 @@ public class GameEngine {
 
     }
 
+    //--------------------------------------------------------------------------//
+    //                                                                          //
+    //                              Static methods                              //
+    //                                                                          //
+    //--------------------------------------------------------------------------//
+
+    /**
+     * Fabric method, creates new instance if there is no instance of this class, or return the exists instance
+     *
+     * @param controller - Controller of the "Game" scene
+     * @return the only one instance of this class
+     */
     public static GameEngine getGameEngine(GameController controller) {
         if (engine == null) {
             engine = new GameEngine(controller);
@@ -133,6 +282,15 @@ public class GameEngine {
         return engine;
     }
 
+    //--------------------------------------------------------------------------//
+    //                                                                          //
+    //                              Instance methods                            //
+    //                                                                          //
+    //--------------------------------------------------------------------------//
+
+    /**
+     * Initialize kill scores for each enemy model
+     */
     private void killScoresInit() {
         killScores.put(ModelType.SOLDIER_1, 10);
         killScores.put(ModelType.SOLDIER_2, 20);
@@ -147,9 +305,13 @@ public class GameEngine {
         killScores.put(ModelType.BOSS_7, 700);
     }
 
+    /**
+     * Load all needed textures from the resources folder
+     *
+     * @param url - URL of the resource folder
+     * @throws IOException -  if there is no FXML file
+     */
     private void loadTextures(String url) throws IOException {
-
-        //SpaceInvaders2App.showError("TEST");
 
         textures.put(ModelType.PLAYER, new Image(url + "player.png"));
         textures.put(ModelType.SOLDIER_1, new Image(url + "enemy1.png"));
@@ -175,7 +337,12 @@ public class GameEngine {
         splitImage(url + "explosion.png");
     }
 
-
+    /**
+     * Initialize the game.
+     * Creates player,enemies and reset all variables
+     *
+     * @throws IOException - if there is problems with files in the resource folder
+     */
     public void init() throws IOException {
         isPaused = false;
         gameOver = false;
@@ -187,7 +354,7 @@ public class GameEngine {
         enemies.clear();
         lasers.clear();
         gamePane.getChildren().clear();
-        group.getChildren().clear();
+        modelsGroup.getChildren().clear();
         effectsGroup.getChildren().clear();
         explosions.clear();
         lifeBox.getChildren().clear();
@@ -200,40 +367,26 @@ public class GameEngine {
         player = new PlayerModel(0, 0, textures.get(ModelType.PLAYER), laserTextures.get(LaserType.BLUE_LASER));
         player.setBorders(0, PANE_HEIGHT, 0, PANE_WIDTH);
 
-        playerStartX = PANE_WIDTH / 2;
-        playerStartY = PANE_HEIGHT - player.getHeight();
+        double playerStartX = PANE_WIDTH / 2;
+        double playerStartY = PANE_HEIGHT - player.getHeight();
 
         player.setX(playerStartX);
         player.setY(playerStartY);
-
         player.scale(0.5);
-
         player.setLaserSpeed(10);
-
         player.setFireRate(500);
-
         player.getView().toFront();
-
         gamePane.getChildren().add(player.getView());
-
         generateLevel();
-
         killScoresInit();
-
         gamePane.setFocusTraversable(true);
-
         gamePane.setOnKeyPressed(this::keyEvent);
-
         gamePane.setOnKeyTyped(this::keyEvent);
-
         gamePane.toBack();
-
-        gamePane.getChildren().add(group);
-        group.toBack();
-
+        gamePane.getChildren().add(modelsGroup);
+        modelsGroup.toBack();
         gamePane.getChildren().add(effectsGroup);
         effectsGroup.toFront();
-
         gamePane.getChildren().add(countdownSeconds);
         countdownSeconds.setVisible(false);
         countdownSeconds.setFont(new Font(70));
@@ -255,13 +408,15 @@ public class GameEngine {
         godModeText.setFill(Color.YELLOW);
         godModeText.setVisible(godMode);
         godModeText.setX(0);
-        godModeText.setY(PANE_HEIGHT-20);
+        godModeText.setY(PANE_HEIGHT - 20);
         gamePane.getChildren().add(godModeText);
 
     }
 
+    /**
+     * Generate new level, spawn enemies according to the current level
+     */
     private void generateLevel() {
-        //double delta = PANE_WIDTH / INIT_ENEMY_COUNT;
 
         if (level == 0) {
             spawnEnemies(INIT_ENEMY_TYPE, INIT_ENEMY_COUNT);
@@ -309,6 +464,12 @@ public class GameEngine {
         }
     }
 
+    /**
+     * Spawn enemies
+     *
+     * @param model -model to spawn
+     * @param count -count to spawn
+     */
     private void spawnEnemies(ModelType model, int count) {
         double start_x = PANE_WIDTH / 2;
         double start_y = PANE_HEIGHT / 5;
@@ -324,37 +485,45 @@ public class GameEngine {
         }
     }
 
+    /**
+     * Split explosion textures image
+     *
+     * @param url -explosion textures image URL
+     * @throws IOException -if file can not be read
+     */
     private void splitImage(String url) throws IOException {
         BufferedImage buffer = ImageIO.read(new URL(url));
-
         int counter = 0;
-
         File tmp = new File("tmp.png");
         for (int x = 0; x < buffer.getWidth(); x += buffer.getWidth() / EXPLOSION_IMAGE_COUNT) {
-
             ImageIO.write(buffer.getSubimage(x, 0, buffer.getWidth() / EXPLOSION_IMAGE_COUNT, buffer.getHeight()), "png", tmp);
             explosionTextures[counter] = new Image(new FileInputStream(tmp));
             ++counter;
-
         }
-
         tmp.deleteOnExit();
     }
 
+    /**
+     * Handle key events
+     *
+     * @param event -current key event
+     */
     private void keyEvent(KeyEvent event) {
         player.setBorders(0, gamePane.getHeight(), 0, gamePane.getWidth());
-        if (debug){
+        if (DEBUG) {
             switch (event.getCode()) {
-                case ESCAPE -> gameOver=true;
-                case PAGE_UP -> player.setFireRate(player.getFireRate()-50);
-                case PAGE_DOWN -> player.setFireRate(player.getFireRate()+50);
+                case ESCAPE -> gameOver = true;
+                case PAGE_UP -> player.setFireRate(player.getFireRate() - 50);
+                case PAGE_DOWN -> player.setFireRate(player.getFireRate() + 50);
                 case G -> {
                     godMode = !godMode;
                     System.out.println(godMode);
                     godModeText.setVisible(godMode);
                 }
                 case D -> {
-                    group.getChildren().removeAll(enemies);
+                    for (EnemyModel enemy : enemies){
+                        modelsGroup.getChildren().remove(enemy.getView());
+                    }
                     enemies.clear();
                 }
             }
@@ -384,6 +553,9 @@ public class GameEngine {
         }
     }
 
+    /**
+     * Show game over information, after SPACE press returns to the main menu
+     */
     private void showGameOver() {
         Text gameOverMessage = new Text("Game Over");
         gameOverMessage.setFont(new Font(50));
@@ -406,19 +578,26 @@ public class GameEngine {
         gamePane.getChildren().addAll(gameOverMessage, spaceMessage, scoresMessage);
     }
 
-
+    /**
+     * If not god mode, delete one life
+     *
+     * @return true if players life is zero, else - false
+     */
     private boolean deleteLife() {
         if (!godMode) {
             if (player.getHealth() > 0) {
                 lifeBox.getChildren().remove(lifeBox.getChildren().get(0));
             }
             return player.decHealth();
-        }else{
+        } else {
             return false;
         }
 
     }
 
+    /**
+     * Calculating enemies moves and move models
+     */
     private void moveEnemies() {
         Random r = new Random();
         for (EnemyModel enemy : enemies) {
@@ -428,19 +607,23 @@ public class GameEngine {
             }
             while (!enemy.move()) {
                 enemy.setMovingVector(r.nextDouble(0, 2 * Math.PI));
-                //System.out.println(enemy.getMovingVector());
             }
             enemy.decMovingTime();
         }
     }
 
+    /**
+     * Calculating lasers moves and move lasers
+     *
+     * @param time -elapsed time from the game start
+     */
     private void moveLasers(long time) {
         if (!noLasers) {
             List<Laser> playerShot = player.shot(time);
             if (playerShot != null) {
                 lasers.addAll(playerShot);
                 for (Laser laser : playerShot) {
-                    group.getChildren().add(laser.getView());
+                    modelsGroup.getChildren().add(laser.getView());
                     laser.scale(0.5);
                 }
             }
@@ -450,7 +633,7 @@ public class GameEngine {
                     lasers.addAll(shot);
                     for (Laser laser : shot) {
                         laser.scale(0.5);
-                        group.getChildren().add(laser.getView());
+                        modelsGroup.getChildren().add(laser.getView());
                     }
                 }
             }
@@ -460,19 +643,21 @@ public class GameEngine {
         while (iter.hasNext()) {
             Laser laser = iter.next();
             laser.move();
-            //double x = laser.getX();
             double y = laser.getY();
-            //double width = laser.getWidth();
             double height = laser.getHeight();
             if (y - height > PANE_HEIGHT || y + height / 2 < 0) {
                 iter.remove();
                 laser.getView().toBack();
-                group.getChildren().remove(laser.getView());
-                //gamePane.getChildren().remove(laser.getView());
+                modelsGroup.getChildren().remove(laser.getView());
             }
         }
     }
 
+    /**
+     * Checks collisions between models and lasers
+     *
+     * @param elapsed - elapsed time from the game start
+     */
     private void checkCollision(long elapsed) {
         Iterator<Laser> iter = lasers.iterator();
 
@@ -483,7 +668,6 @@ public class GameEngine {
             if (laser.getDirection() == Direction.UP) {
                 for (EnemyModel enemy : enemies) {
                     if (enemy.getView().intersects(laser.getView().getLayoutBounds())) {
-                        //System.out.println("HIT");
                         toRemove.add(laser);
                         HitEffect hit = new HitEffect(laser, hitTexture, elapsed);
                         hits.add(hit);
@@ -513,7 +697,7 @@ public class GameEngine {
 
         for (Object obj : toRemove) {
             if (obj instanceof Laser) {
-                group.getChildren().remove(((Laser) obj).getView());
+                modelsGroup.getChildren().remove(((Laser) obj).getView());
                 lasers.remove(obj);
             } else if (obj instanceof EnemyModel) {
                 gamePane.getChildren().remove(((EnemyModel) obj).getView());
@@ -522,6 +706,11 @@ public class GameEngine {
         }
     }
 
+    /**
+     * Draw effects like hits and explosions
+     *
+     * @param elapsed -elapsed time from the game start
+     */
     private void effectsUpdate(long elapsed) {
         Iterator<HitEffect> iter = hits.iterator();
 
@@ -543,6 +732,12 @@ public class GameEngine {
         }
     }
 
+    /**
+     * Processing countdown
+     *
+     * @param elapsed -elapsed time from the game start
+     * @return true if it's still countdown, false if countdown is ended
+     */
     private boolean countdown(long elapsed) {
         int current = (int) (COUNTDOWN_DURATION - (elapsed - startCountdown) / 1000);
 
@@ -556,10 +751,14 @@ public class GameEngine {
         countdownSeconds.setX(PANE_WIDTH / 2 - countdownSeconds.getLayoutBounds().getWidth() / 2);
         countdownSeconds.setY(PANE_HEIGHT / 2);
 
-
         return true;
     }
 
+    /**
+     * Processing one game frame
+     *
+     * @param time - elapsed time from the game start
+     */
     public void update(long time) {
         if (gameOver) {
             showGameOver();
